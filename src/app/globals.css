@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap");
+
+:root {
+  --bg-primary: #f5f0e6;
+  --bg-secondary: #1e2a44;
+  --text-primary: #2d3748;
+  --text-secondary: #f7fafc;
+  --accent: #d97706;
+  --accent-hover: #b45309;
+  --border: #e2e8f0;
+  --error-bg: #fed7d7;
+  --error-border: #f56565;
+  --error-text: #9b2c2c;
+}
+
+[data-theme="retro"] {
+  --bg-primary: #2d3748;
+  --bg-secondary: #4a5568;
+  --text-primary: #f7fafc;
+  --text-secondary: #edf2f7;
+  --accent: #48bb78;
+  --accent-hover: #38a169;
+  --border: #a0aec0;
+}
+
+body {
+  @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Merriweather", serif;
+}
+
+.retro-border {
+  @apply border-4 border-double border-[var(--border)];
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.btn-primary {
+  @apply bg-[var(--accent)] text-[var(--text-secondary)] font-semibold py-2 px-4 rounded-lg hover:bg-[var(--accent-hover)] transition duration-300;
+}
+
+.card {
+  @apply bg-white shadow-lg rounded-lg p-6 transition transform hover:-translate-y-1 hover:shadow-xl;
+}
